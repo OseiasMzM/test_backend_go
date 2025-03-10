@@ -8,11 +8,9 @@ import (
 )
 
 func TestFetchUserByID(t *testing.T) {
-	// Inicializa o httpmock
 	httpmock.Activate()
 	defer httpmock.DeactivateAndReset()
 
-	// Simula a resposta da API
 	httpmock.RegisterResponder("GET", "https://jsonplaceholder.typicode.com/users/1",
 		httpmock.NewStringResponder(http.StatusOK, `{
 			"id": 1,
@@ -23,13 +21,10 @@ func TestFetchUserByID(t *testing.T) {
 			"website": "hildegard.org"
 		}`))
 
-	// Chama a função que queremos testar
 	user, err := FetchUserByID("1")
 
-	// Verifica se não houve erro
 	assert.NoError(t, err)
 
-	// Verifica se os dados retornados estão corretos
 	assert.Equal(t, 1, user.ID)
 	assert.Equal(t, "Leanne Graham", user.Name)
 	assert.Equal(t, "Bret", user.Username)
