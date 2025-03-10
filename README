@@ -1,0 +1,7 @@
+go mod tidy
+
+go run main.go
+
+
+		cURL: curl -X GET http://localhost:8080/user/12
+		cURL: curl -X GET http://localhost:8080/weather/London
