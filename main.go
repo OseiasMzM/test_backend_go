@@ -28,6 +28,6 @@ func main() {
 	r.GET("/weather/:city", handler.GetWeather)
 
 	if err := r.Run(":8080"); err != nil {
-		log.Fatalf("Erro ao iniciar o servidor: %v", err)
+		log.Fatalf("%v", err)
 	}
 }
