@@ -12,7 +12,7 @@ func GetWeather(c *gin.Context) {
 
 	weather, err := service.FetchWeatherByCity(city)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Desculpe, não conseguimos obter as informações do clima."})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Sorry, we were unable to retrieve the weather information."})
 		return
 	}
 
